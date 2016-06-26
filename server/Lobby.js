@@ -14,9 +14,6 @@ function Lobby ({ config }) {
         room.startGame();
     }
 
-    function onInput (client, parts) {
-    }
-
     function createGame (client) {
         const room = Room.create({
             owner: client,
@@ -140,11 +137,6 @@ function Lobby ({ config }) {
             }
 
             clients.delete(client.getId());
-        });
-
-
-        client.on('error', (err) => {
-            log('Client error', err);
         });
     }
 
